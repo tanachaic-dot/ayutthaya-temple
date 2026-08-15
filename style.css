@@ -1,0 +1,243 @@
+/* =========================================
+   1. ตั้งค่าพื้นฐาน (Reset & Base Styles)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* ใช้ฟอนต์ Prompt ที่ดึงมาจาก Google Fonts */
+    font-family: 'Prompt', sans-serif;
+    /* โทนสีเข้ม (Dark Mode) ให้ความรู้สึกเรียบหรู มินิมอล */
+    background-color: #121212; 
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. ส่วนหัวของเว็บไซต์ (Hero Section)
+========================================= */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #1e1e1e, #121212);
+    border-bottom: 1px solid #333;
+}
+
+.hero-section h1 {
+    font-size: 5.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #aaaaaa;
+}
+
+/* =========================================
+   3. ส่วนจัดหน้ากระดาษและ Grid (Layout)
+========================================= */
+.container {
+    max-width: 1200px; /* จำกัดความกว้างไม่ให้เว็บยืดเกินไปในจอใหญ่ */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.temple-grid {
+    display: grid;
+    /* ทำ Responsive: จอเล็กแสดง 1 แถว, จอใหญ่แสดง 3 แถว */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* ระยะห่างระหว่างการ์ด */
+}
+
+/* =========================================
+   4. ตกแต่งการ์ด (Card Design)
+========================================= */
+.temple-card {
+    background-color: #1e1e1e;
+    border-radius: 12px; /* มุมโค้งมนให้ดูทันสมัย */
+    overflow: hidden; /* ตัดขอบรูปที่ล้นมุมโค้งออก */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เตรียมไว้ทำอนิเมชั่นตอนชี้เมาส์ */
+}
+
+/* ลูกเล่น Hover: เมื่อเอาเมาส์ชี้ การ์ดจะลอยขึ้นและเงามีขนาดใหญ่ขึ้น */
+.temple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.temple-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* ให้รูปเต็มกรอบโดยสัดส่วนไม่เพี้ยน */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. ตกแต่งปุ่มลิงก์ (Button)
+========================================= */
+.btn-readmore {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; /* ปุ่มสีขาวตัดกับพื้นหลังสีเข้ม */
+    color: #121212;
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    font-weight: 600;
+    border-radius: 8px; /* ปุ่มขอบมน */
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-readmore:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* =========================================
+   6. ส่วนท้ายเว็บ (Footer)
+========================================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0a0a;
+    color: #777777;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+.btn-back {
+    display: inline-block;
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.btn-back:hover {
+    color: #ffffff;
+}
+
+/* ส่วนหัวของหน้ารายละเอียด */
+.detail-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.detail-header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.detail-header p {
+    font-size: 1.2rem;
+    color: #aaaaaa;
+}
+
+/* รูปภาพหลัก */
+.detail-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* จัดการให้รูปสวยเต็มจอ ไม่เบี้ยว */
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ส่วนเนื้อหาประวัติ */
+.detail-content {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.detail-content h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 5px solid #ffcc00; /* เส้นตกแต่งด้านซ้ายให้ดูมีดีไซน์ */
+    padding-left: 15px;
+}
+
+.detail-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-indent: 2em; /* ย่อหน้าให้สวยงาม */
+}
+
+/* ส่วนแผนที่ (Map) */
+.detail-map h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.map-container {
+    border-radius: 12px;
+    overflow: hidden; /* ตัดขอบมุมเหลี่ยมของแผนที่ให้โค้งมน */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   8. ระบบสไลด์โชว์ (Slideshow)
+========================================= */
+
+/* กล่องหลักสำหรับใส่สไลด์ */
+.slideshow-container {
+    width: 100%;
+    height: 500px; /* ความสูงเท่ากรอบรูปเดิม */
+    position: relative; /* สำคัญมาก เพื่อให้รูปลอยซ้อนกันข้างในได้ */
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgb(255, 220, 22);
+    background-color: #000; /* สีพื้นหลังสีดำเวลารูปกำลังโหลด */
+}
+
+/* ตั้งค่ารูปภาพแต่ละรูป */
+.mySlides {
+    display: none; /* ซ่อนรูปทั้งหมดไว้ก่อน (เดี๋ยว JS จะมาเปิดทีละรูป) */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ให้รูปเต็มกรอบสวยงาม */
+    position: absolute; /* สั่งให้รูปทุกรูปไปกองซ้อนกันอยู่ที่มุมซ้ายบน */
+    top: 0;
+    left: 0;
+}
+
+/* เอฟเฟกต์ค่อยๆ ปรากฏ (Fade Animation) */
+.fade {
+    animation-name: fadeEffect;
+    animation-duration: 2s; /* ใช้เวลาเฟด 2 วินาที (ดูช้าๆ นุ่มนวล) */
+}
+
+/* กำหนดการเปลี่ยนแปลงของความโปร่งใส */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
